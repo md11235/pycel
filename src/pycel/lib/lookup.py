@@ -235,6 +235,10 @@ def hlookup(lookup_value, table_array, row_index_num, range_lookup=True):
 def index(array, row_num, col_num=None):
     # Excel reference: https://support.microsoft.com/en-us/office/
     #   index-function-a5dcf0dd-996d-40a4-a822-b56b061328bd
+    if int(row_num) != row_num:
+        row_num = int(row_num)
+    if col_num != None and int(col_num) != col_num:
+        col_num = int(col_num)
 
     if not list_like(array):
         if array in ERROR_CODES:
